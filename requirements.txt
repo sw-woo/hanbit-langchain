@@ -285,7 +285,7 @@ streamlit-keyup==0.3.0
 streamlit-toggle-switch==1.0.2
 streamlit-vertical-slider==2.5.5
 sympy==1.13.1
-tenacity==8.5.0
+tenacity==9.0.0
 terminado==0.18.1
 tiktoken==0.7.0
 timm==1.0.15
