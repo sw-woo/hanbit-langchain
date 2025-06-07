@@ -89,15 +89,9 @@ combined_lcel_chain = (
         language=lambda x: language_chain_component.invoke({"review": x["review"]})
     )
     | RunnablePassthrough.assign(
-        # 입력: {'review': '...', ..., 'language': '언어', 'summary': '요약된 텍스트'}
-        # reply1_chain_component는 'language'와 'summary' 키를 사용합니다.
-        # 출력: {'review': '...', ..., 'language': '...', 'summary': '...', 'reply1': '첫 번째 답변'}
         reply1=lambda x: reply1_chain_component.invoke({"language": x["language"], "summary": x["summary"]})
     )
     | RunnablePassthrough.assign(
-        # 입력: {'review': '...', ..., 'reply1': '첫 번째 답변'}
-        # reply2_chain_component는 'reply1' 키를 사용합니다.
-        # 출력: {'review': '...', ..., 'reply1': '...', 'reply2': '두 번째 답변 (한국어)'}
         reply2=lambda x: reply2_chain_component.invoke({"reply1": x["reply1"]})
     )
 )

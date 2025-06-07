@@ -31,7 +31,7 @@ st.title("인공지능 시인")
 
 #시 주제 입력 필드
 content = st.text_input("시의 주제를 제시해주세요")
-
+st.write("시의 주제는", content)
 
 #시 작성 요청하기
 if st.button("시 작성 요청하기"):
