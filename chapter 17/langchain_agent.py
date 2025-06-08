@@ -7,9 +7,6 @@ from langchain.agents import create_openai_tools_agent
 # langchainhub 에서 제공하는 prompt 사용
 from langchain import hub
 
-# yfinance api를 사용하기 위한 tool 생성
-from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
-
 # arxiv 논문 검색을 위한 tool 생성
 from langchain_community.utilities import ArxivAPIWrapper
 from langchain_community.tools import ArxivQueryRun
@@ -74,7 +71,6 @@ retriever_tool = create_retriever_tool(
 #툴 이름 출력 확인
 print(retriever_tool.name)
 
-
 # arxiv tool
 # arxiv API 설정 : top_k_results = 결과 수, doc_content_chars_max = 문서 길이 제한
 arxiv_wrapper = ArxivAPIWrapper(
@@ -84,11 +80,8 @@ arxiv = ArxivQueryRun(api_wrapper=arxiv_wrapper)
 #arxiv tool 이름 출력 확인
 print(arxiv.name)
 
-# Yahoo Finance News API 설정 : top_k=결과 수
-yfinace = YahooFinanceNewsTool(top_k=2)
-
 # agent가 사용할 tool을 정의하여 tools에 저장
-tools = [wiki, retriever_tool, arxiv, yfinace]
+tools = [wiki, retriever_tool, arxiv]
 
 # agent llm 모델을 openai로 정의하고 tools ,prompt를 입력하여 agent를 완성한다.
 agent = create_openai_tools_agent(llm=openai, tools=tools, prompt=prompt)
@@ -98,7 +91,7 @@ agent = create_openai_tools_agent(llm=openai, tools=tools, prompt=prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 # agent_result = agent_executor.invoke({"input": "llm 관련 최신 논문을 알려줘"})
-agent_result = agent_executor.invoke({"input": "테슬라 최근 주가 변동세랑 주요 소식을 알려줘"})
+agent_result = agent_executor.invoke({"input": "오늘 부동산 관련 주요 소식을 알려줘"})
 
 #결과 출력
 print(agent_result)
