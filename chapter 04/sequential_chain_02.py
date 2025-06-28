@@ -43,7 +43,7 @@ prompt5 = PromptTemplate.from_template(
 
 # 프롬프트 6: 생성된 답변을 한국어로 번역
 prompt6 = PromptTemplate.from_template(
-    "다음 숙박 시설 리뷰를 한국어로 번역해주세요. \n 리뷰 번역 {reply1}"
+    "다음 생성된 답변을 한국어로 번역해주세요. \n 리뷰 번역 {reply1}"
 )
 
 # --- LCEL을 사용한 체인 구성 요소 정의 ---

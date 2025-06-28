@@ -16,7 +16,7 @@ prompt1 = PromptTemplate.from_template(
 )
 chain1 = LLMChain(llm=openai, prompt=prompt1, output_key="summary")
 prompt2 = PromptTemplate.from_template(
-   "다음 식당 리뷰를 읽고 0점부터 10점 사이에서 부정/긍정 점수를 매기세요. 숫자만 대답하세요.\n\n{review}"
+   "다음 식당 리뷰를 읽고 0점부터 10점 사이에서 긍정/부정 점수를 매기세요. 숫자만 대답하세요.\n\n{review}"
 )
 chain2 = LLMChain(llm=openai, prompt=prompt2, output_key="sentiment_score")
 prompt3 = PromptTemplate.from_template(
@@ -34,7 +34,7 @@ all_chain = SequentialChain(
 # 식당 리뷰 입력
 review = """
 이 식당은 맛도 좋고 분위기도 좋았습니다. 가격 대비 만족도가 높아요.
-하지만, 서비스 속도가 너무 느려서 조금 실망스러워습니다.
+하지만, 서비스 속도가 너무 느려서 조금 실망스러웠습니다.
 전반적으로는 다시 방문할 의사가 있습니다.
 """
 # 체인 실행 및 결과 출력

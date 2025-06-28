@@ -20,12 +20,12 @@ chat = ChatOpenAI(
 )
 
 # 질문 정의
-question = "화창한날은 뭐하면 좋을까?"
+question = "화창한 날에는 뭘 하면 좋을까?"
 
 # 시스템에게 역할을 지정하고 메세지를 나의 메세지를 던지면 좀더 원하는 내용의 답변을 받을수 있습니다.
 messages = [
     SystemMessage(
-        content="너는 심리 상담가 입니다."
+        content="당신은 심리 상담가입니다."
     ),
     HumanMessage(
         content=question
