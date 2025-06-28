@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 
 # Ollama 사용 시 적용하는 방법
 llm = ChatOpenAI(
-    model="ollama/llama3.1:8b",                 # 사용할 언어 모델 지정
+    model="ollama/gemma3:4b",                 # 사용할 언어 모델 지정
     base_url="http://localhost:11434/v1",  # 언어 모델의 베이스 URL
     api_key="NA"                         # API 키 (필요 없는 경우 'NA'로 설정)
 )
@@ -33,7 +33,7 @@ writer = Agent(
         "당신의 글은 콘텐츠 기획자의 작업을 기반으로 하며, 콘텐츠 기획자는 개요와 관련된 맥락을 제공합니다."
         "콘텐츠 기획자가 제공한 개요의 주요 목표와 방향을 따릅니다."
         "또한 콘텐츠 기획자가 제공한 정보로 뒷받침되는 객관적이고 공정한 통찰력을 제공합니다."
-        "의견 진술과 객관적 진술을 구분하여 의견 기사에서 인정합니다."
+        "의견 진술과 객관적 진술을 구분하여 의견 기사에 반영합니다."
     ),
     allow_delegation=False,
     llm=llm,
@@ -62,7 +62,7 @@ translate_writter = Agent(
     verbose=True,
     memory=True,
     backstory=(
-        "언어를 감지해서 한국어로 바꾸어서 작생해줘"
+        "언어를 감지해서 한국어로 바꾸어서 작성해줘"
     ),
     allow_delegation=False,
     llm=llm
