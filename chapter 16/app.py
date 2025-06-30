@@ -56,7 +56,7 @@ add_routes(
     path="/llama",   # 이 경로로 요청이 들어오면 OllamaLLM 인스턴스를 통해 처리됩니다. # 입력 형식을 지정합니다.
 )
 
-# 소설 작성 /openai/essay API 경로를 추가합니다.
+# 소설 작성 /openai/novel API 경로를 추가합니다.
 add_routes(
     app,
     prompt2 | openAiModel,  # 프롬프트 템플릿과 모델을 결합하여 요청을 처리합니다.
@@ -70,7 +70,7 @@ add_routes(
     path="/openai/poem"  # 이 경로로 요청이 들어오면 시를 작성합니다.
 )
 
-# 소설 작성 /openai/essay API 경로를 추가합니다.
+# 소설 작성 /openai/novel API 경로를 추가합니다.
 add_routes(
     app,
     prompt2 | llamaModel,  # 프롬프트 템플릿과 모델을 결합하여 요청을 처리합니다.
