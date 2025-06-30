@@ -66,7 +66,7 @@ print(retriever)
 
 # 검색 도구 생성
 retriever_tool = create_retriever_tool(
-    retriever, "naver_news_search", "네이버 뉴스정보가 저장된 벡터 DB 당일 기사에 대해서 궁금하면 이 툴을 사용하세요!")
+    retriever, "naver_news_search", "네이버 뉴스정보가 저장된 벡터 DB, 당일 기사에 대해서 궁금하면 이 툴을 사용하세요!")
 
 #툴 이름 출력 확인
 print(retriever_tool.name)

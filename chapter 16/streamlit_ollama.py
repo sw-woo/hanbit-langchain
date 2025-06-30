@@ -18,7 +18,7 @@ option = st.radio("작성을 원하는 항목을 선택하세요:", ("소설", "
 if st.button("작성 요청 보내기"):
     if option == "소설":
         # 소설 작성 API에 POST 요청을 보냅니다.
-        response = requests.post("http://localhost:8000/llama/essay/invoke",
+        response = requests.post("http://localhost:8000/llama/novel/invoke",
                                  json={'input': {'topic': topic}})
     else:
         # 시 작성 API에 POST 요청을 보냅니다.

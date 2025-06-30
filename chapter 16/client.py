@@ -1,14 +1,14 @@
 import requests
 
 # 실행명령어 : python client.py
-response1 = requests.post("http://localhost:8000/openai/essay/invoke",
+response1 = requests.post("http://localhost:8000/openai/novel/invoke",
                           json={'input': {'topic': "행복에 대해서"}})
 
 
 response2 = requests.post("http://localhost:8000/openai/poem/invoke",
                           json={'input': {'topic': "행복에 대해서"}})
 
-response3 = requests.post("http://localhost:8000/llama/essay/invoke",
+response3 = requests.post("http://localhost:8000/llama/novel/invoke",
                           json={'input': {'topic': "행복에 대해서"}})
 
 
