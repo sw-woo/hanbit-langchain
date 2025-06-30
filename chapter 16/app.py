@@ -60,7 +60,7 @@ add_routes(
 add_routes(
     app,
     prompt2 | openAiModel,  # 프롬프트 템플릿과 모델을 결합하여 요청을 처리합니다.
-    path="/openai/essay"  # 이 경로로 요청이 들어오면 소설을 작성합니다.
+    path="/openai/novel"  # 이 경로로 요청이 들어오면 소설을 작성합니다.
 )
 
 # 시 작성 /openai/poem API 경로를 추가합니다.
@@ -74,7 +74,7 @@ add_routes(
 add_routes(
     app,
     prompt2 | llamaModel,  # 프롬프트 템플릿과 모델을 결합하여 요청을 처리합니다.
-    path="/llama/essay"  # 이 경로로 요청이 들어오면 소설을 작성합니다.
+    path="/llama/novel"  # 이 경로로 요청이 들어오면 소설을 작성합니다.
 )
 
 # 시 작성 /openai/poem API 경로를 추가합니다.
