@@ -1,4 +1,5 @@
 jocoding-langchain
 langchain-python-book
 chapter 06/llama-2-7b-chat.ggmlv3.q8_0.bin
-
+.venv
+chapter 22/crewai-multi-agent-blog-writer-frontend/node_modules
