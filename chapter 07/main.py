@@ -100,8 +100,8 @@ if uploaded_file is not None:
 
             #Generate
             chat_box = st.empty()
-            stream_hander = StreamHandler(chat_box)
-            generate_llm = ChatOpenAI(model="gpt-4o-mini",temperature=0, openai_api_key=openai_key, streaming=True, callbacks=[stream_hander])
+            stream_handler = StreamHandler(chat_box)
+            generate_llm = ChatOpenAI(model="gpt-4o-mini",temperature=0, openai_api_key=openai_key, streaming=True, callbacks=[stream_handler])
             def format_docs(docs):
                 return "\n\n".join(doc.page_content for doc in docs)
             rag_chain = (
